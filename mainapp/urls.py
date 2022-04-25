@@ -8,10 +8,11 @@ app_name = 'mainapp'
 
 urlpatterns = [
     path('', main, name='main'),
-    path('mainapp/about', about, name='about'),
+    path('mainapp/learning', learning, name='learning'),
     path('mainapp/contact', contact, name='contact'),
     path('mainapp/portfolio', portfolio, name='portfolio'),
     path('mainapp/portfolio_details', portfolio_details, name='portfolio_details'),
     path('mainapp/resume', resume, name='resume'),
     path('mainapp/services', services, name='services'),
+    path('detectme', detectme, name="detectme"),
 ]
