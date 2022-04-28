@@ -3,7 +3,6 @@ from django.views.decorators import gzip
 from django.http import StreamingHttpResponse
 import cv2
 import threading
-import mainapp.yolo
 
 # Create your views here.
 from mainapp import yolo
@@ -41,6 +40,7 @@ class VideoCamera(object):
 
     def get_frame(self):
         image = self.frame
+        image = yolo.detection(image)
         _, jpeg = cv2.imencode('.jpg', image)
         return jpeg.tobytes()
 
@@ -51,6 +51,7 @@ class VideoCamera(object):
 def gen(camera):
     while True:
         frame = camera.get_frame()
+
         yield(b'--frame\r\n'
               b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
