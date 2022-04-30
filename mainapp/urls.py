@@ -15,4 +15,6 @@ urlpatterns = [
     path('mainapp/resume', resume, name='resume'),
     path('mainapp/services', services, name='services'),
     path('detectme', detectme, name="detectme"),
+    path('detectme2', detectme2, name="detectme2"),
+    #path('ShowWords', ShowWords, name="ShowWords"),
 ]

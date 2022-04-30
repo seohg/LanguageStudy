@@ -7,12 +7,13 @@ import threading
 # Create your views here.
 from mainapp import yolo
 
-
+global pastFrame
 def main(request):
     return render(request, 'index.html')
 
 def learning(request):
-    return render(request, 'learning.html')
+    words = yolo.labels
+    return render(request, 'learning.html',{'words': words})
 
 def contact(request):
     return render(request, 'contact.html')
@@ -44,6 +45,12 @@ class VideoCamera(object):
         _, jpeg = cv2.imencode('.jpg', image)
         return jpeg.tobytes()
 
+    def get_frame2(self):
+        image = self.frame
+        image = yolo.detection2(image)
+        _, jpeg = cv2.imencode('.jpg', image)
+        return jpeg.tobytes()
+
     def update(self):
         while True:
             (self.grabbed, self.frame) = self.video.read()
@@ -55,6 +62,19 @@ def gen(camera):
         yield(b'--frame\r\n'
               b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
+def gen2(camera):
+    global pastFrame
+    flag = True
+    while True:
+        if flag:
+            frame = camera.get_frame()
+            pastFrame = frame
+            flag = False
+        else:
+            frame = pastFrame
+
+        yield(b'--frame\r\n'
+              b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
 @gzip.gzip_page
 def detectme(request):
@@ -64,3 +84,12 @@ def detectme(request):
     except:  # This is bad! replace it with proper handling
         print("에러입니다...")
         pass
+def detectme2(request):
+    try:
+        cam = VideoCamera()
+        #return gen2(cam)
+        return StreamingHttpResponse(gen2(cam), content_type="multipart/x-mixed-replace;boundary=frame")
+    except:  # This is bad! replace it with proper handling
+        print("에러입니다...")
+        pass
+
