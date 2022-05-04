@@ -1,8 +1,10 @@
 import cv2
 import numpy as np
 labels = []
+images = []
 def detection(_frame):
     global labels
+    global images
     # 웹캠 신호 받기
     #VideoSignal = cv2.VideoCapture(0)
     # YOLO 가중치 파일과 CFG 파일 로드
@@ -35,7 +37,7 @@ def detection(_frame):
         confidences = []
         boxes = []
         labels = []
-
+        images = []
         for out in outs:
 
             for detection in out:
@@ -74,7 +76,7 @@ def detection(_frame):
 
                 roi = frame[y:y + h, x:x + w]  # roi 지정
                 saveImage = roi.copy()
-
+                images.append(saveImage)
 
                 score = confidences[i]
 

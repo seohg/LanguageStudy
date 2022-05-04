@@ -1,18 +1,23 @@
+import threading
+
+import cv2
+from django.http import StreamingHttpResponse
 from django.shortcuts import render
 from django.views.decorators import gzip
-from django.http import StreamingHttpResponse
-import cv2
-import threading
 
 # Create your views here.
 from mainapp import yolo
-
+from mainapp import models
 global pastFrame
 def main(request):
     return render(request, 'index.html')
 
 def learning(request):
     words = yolo.labels
+    for idx, val in enumerate(yolo.images):
+        cv2.imwrite(r"C:\Users\shk98\django\yolo\mainapp\images\\" +words[idx]+".png", val)
+        physics = models.Word(word=yolo.labels[idx],image=r"C:\Users\shk98\django\yolo\mainapp\images\\"+words[idx]+".png")
+        physics.save()
     return render(request, 'learning.html',{'words': words})
 
 def contact(request):
@@ -32,7 +37,7 @@ def services(request):
 
 class VideoCamera(object):
     def __init__(self):
-        self.video = cv2.VideoCapture(1)
+        self.video = cv2.VideoCapture(0, cv2.CAP_DSHOW)
         (self.grabbed, self.frame) = self.video.read()
         threading.Thread(target=self.update, args=()).start()
 
