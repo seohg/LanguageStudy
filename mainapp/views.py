@@ -1,7 +1,9 @@
 import threading
 
 import cv2
+import json
 from django.http import StreamingHttpResponse
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.decorators import gzip
 
@@ -16,9 +18,17 @@ def learning(request):
     words = yolo.labels
     for idx, val in enumerate(yolo.images):
         cv2.imwrite(r"C:\Users\shk98\django\yolo\mainapp\images\\" +words[idx]+".png", val)
-        physics = models.Word(word=yolo.labels[idx],image=r"C:\Users\shk98\django\yolo\mainapp\images\\"+words[idx]+".png")
+        physics = models.Word(word=yolo.labels[idx], image=r"C:\Users\shk98\django\yolo\mainapp\images\\"+words[idx]+".png")
         physics.save()
-    return render(request, 'learning.html',{'words': words})
+    return render(request, 'learning.html', {'words': words})
+
+def ajax(request):
+    words = yolo.labels
+    context = {'words': words}
+    response = json.dumps(context)
+    print(response)
+    return HttpResponse(response)
+    # return HttpResponse(json.dumps(data), content_type='application/json')
 
 def contact(request):
     return render(request, 'contact.html')
@@ -30,7 +40,10 @@ def portfolio_details(request):
     return render(request, 'portfolio-details.html')
 
 def resume(request):
-    return render(request, 'resume.html')
+    context = {
+        "words": models.Word.objects.all()
+    }
+    return render(request, 'resume.html', context)
 
 def services(request):
     return render(request, 'services.html')

@@ -9,6 +9,7 @@ app_name = 'mainapp'
 urlpatterns = [
     path('', main, name='main'),
     path('mainapp/learning', learning, name='learning'),
+    path('ajax', ajax, name='ajax'),
     path('mainapp/contact', contact, name='contact'),
     path('mainapp/portfolio', portfolio, name='portfolio'),
     path('mainapp/portfolio_details', portfolio_details, name='portfolio_details'),
