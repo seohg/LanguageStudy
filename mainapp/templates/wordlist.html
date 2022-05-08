@@ -7,9 +7,9 @@
 
  
   <main id="main">
-
     <!-- ======= Resume Section ======= -->
     <section id="resume" class="resume">
+      <a href="../" class="btn-about">back</a>
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -22,7 +22,7 @@
             {% for item in words %}
               <div class="resume-item pb-0">
                   <h4>{{item.word}}</h4>
-                  <img id = "word_image" src="/static/image/{{item.word}}.png"  alt="">
+                  <img id = "word_image" src="/static/images/{{item.word}}.png"  alt="">
                   <button id="speak_word" onclick="speak('{{item.word}}')">읽기</button>
                     <script>
                       function speak(text) {

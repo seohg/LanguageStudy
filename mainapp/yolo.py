@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+import os
 labels = []
 images = []
 def detection(_frame):
@@ -8,13 +9,13 @@ def detection(_frame):
     # 웹캠 신호 받기
     #VideoSignal = cv2.VideoCapture(0)
     # YOLO 가중치 파일과 CFG 파일 로드
-    YOLO_net = cv2.dnn.readNet(r"C:\Users\shk98\django\yolo\mainapp\yolov2-tiny.weights",r"C:\Users\shk98\django\yolo\mainapp\yolov2-tiny.cfg")
+
+    YOLO_net = cv2.dnn.readNet(r"yolov2-tiny.weights",r"yolov2-tiny.cfg")
 
     # YOLO NETWORK 재구성
     classes = []
-    with open(r"C:\Users\shk98\django\yolo\mainapp\yolo.names", "r", encoding='utf-8') as f:
+    with open(r"yolo.names", "r", encoding='utf-8') as f:
         classes = [line.strip() for line in f.readlines()]
-        print(classes)
     layer_names = YOLO_net.getLayerNames()
     output_layers = [layer_names[i - 1] for i in YOLO_net.getUnconnectedOutLayers()]
 
