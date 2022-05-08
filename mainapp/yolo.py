@@ -84,7 +84,7 @@ def detection(_frame):
 
                 # 경계상자와 클래스 정보 이미지에 입력
                 cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 5)
-                cv2.putText(frame, label, (x, y - 20), cv2.FONT_ITALIC, 0.5,(255, 255, 255), 1)
+                cv2.putText(frame, label, (x, y - 20), cv2.FONT_ITALIC, 3,(255, 255, 255), 1)
 
 
         #cv2.imshow("YOLOv3", frame)

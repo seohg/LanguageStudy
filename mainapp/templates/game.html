@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta charset="utf-8">
+
 {% include "head.html" %}
 {% include "header.html" %}
 
@@ -113,7 +115,16 @@ const quizData =[
                                                     ${item} : ${currentQuestion.answers[item]}
                                                 </label>`);
                           }
-                             output.push(`<div class="slide"><div class="question"><img width="30" height="30" id = "word_image" src="/static/images/${currentQuestion.question}.png"  alt=""></div>
+                          var a= "/static/images/";
+
+                          var b = currentQuestion.question;
+
+                          var b2 = encodeURI(b);
+
+                          var c = ".png";
+                          var tmp = a+b+c;
+
+                             output.push(`<div class="slide"><div class="question"><img width="30" height="30" id = "word_image" src=${tmp}  alt=""></div>
                                           <div class="answer">${answers.join('&nbsp;&nbsp;&nbsp;&nbsp;')}</div></div>`);
                     }
        );
