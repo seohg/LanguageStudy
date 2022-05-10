@@ -7,6 +7,37 @@
 
  
   <main id="main">
+
+    <style>
+
+      .bi-play-circle-fill{
+        border-radius: 15px;
+            background-color: #ffc0cb;
+            background-image: linear-gradient(315deg, #ffe3ee 0%, #ff848f 74%);
+            line-height: 10px;
+              margin-right: 5px;
+              margin-left: 5px;
+              margin-top: 10px;
+              margin-bottom: 20px;
+            padding: 15px;
+            border: none;
+            }
+
+      .bi-trash-fill{
+        border-radius: 15px;
+            background-color: #ffc0cb;
+            background-image: linear-gradient(315deg, #ffe3ee 0%, #ff848f 74%);
+            line-height: 10px;]
+              margin-right: 5px;
+              margin-left: 5px;
+              margin-top: 10px;
+              margin-bottom: 20px;
+            padding: 15px;
+            border: none;
+            }
+    </style>
+
+
     <!-- ======= Resume Section ======= -->
     <section id="resume" class="resume">
       <a href="../" class="btn-about">back</a>
@@ -14,7 +45,6 @@
 
         <div class="section-title">
           <h2>Word List</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
         <div class="row">
@@ -22,8 +52,10 @@
             {% for item in words %}
               <div class="resume-item pb-0">
                   <h4>{{item.word}}</h4>
-                  <img id = "word_image" src="/static/images/{{item.word}}.png"  alt="">
-                  <button id="speak_word" onclick="speak('{{item.word}}')">읽기</button>
+                  <img id = "word_image" src="/static/images/{{item.word}}.png"  alt="" style="width: 25vw; min-width: 100px; min-height: 100px">
+                <button id="speak_word" class="bi-play-circle-fill" onclick="speak('{{item.word}}')"></button>
+
+                <button id="delete_word" class="bi-trash-fill" onclick=""></button>
                     <script>
                       function speak(text) {
                           if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
@@ -42,8 +74,6 @@
                           // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
                           window.speechSynthesis.speak(speechMsg)
                       }
-
-
 
                    </script>
 
