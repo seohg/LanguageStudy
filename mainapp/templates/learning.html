@@ -78,6 +78,36 @@
             padding: 15px;
             border: none;
             }
+
+
+            input {display: none;}
+            label {
+              display: inline-block;
+              width: 80px;
+              border-radius: 70px;
+              height: 34px;
+              cursor: pointer;
+              position: relative;
+              background-color: #ccc;
+            }
+            label::before {
+              content: '';
+              display: block;
+              width: 26px;
+              height: 26px;
+              left: 4px;
+              bottom: 4px;
+              position: absolute;
+              background-color: #fff;
+              transition: all.4s ease;
+            }
+
+            input:checked + label {background-color: #ffc0cb;}
+            input:checked + label:before{
+              transform: translateX(40px);
+            }
+            label.rounded-2 {border-radius: 30px}
+            label.rounded-2::before {border-radius: 100%}
     </style>
 
     <!-- ======= About Section ======= -->
@@ -96,7 +126,10 @@
         <div class="row">
           <div class="col-lg-4">
             <img id = "camimg" src="http://127.0.0.1:8000/detectme" class="img-fluid" alt="">
-            <button id ="camtoggle" class="bi-camera-fill" onclick="toggleImg()"></button>
+            <!--<button id ="camtoggle" class="bi-camera-fill" onclick="toggleImg()"></button> -->
+            <input type="checkbox" id="switch_btn" class="rounded-2">
+            <label for="switch_btn" class="rounded-2"></label>
+
             <script type="text/javascript">
               let flag = false;
               function toggleImg() {
