@@ -153,8 +153,7 @@ h1, h2, h3, h4, h5, h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  background: #e9e8e6;
-  box-shadow: 0px 0px 25px 0 rgba(0, 0, 0, 0.08);
+  background: #fff;
   z-index: 997;
   padding: 15px 0;
 }
@@ -434,7 +433,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 20px;
   letter-spacing: 1px;
   display: inline-block;
   padding: 12px 40px;

@@ -12,9 +12,9 @@
     <!-- ======= Contact Section ======= -->
     <section id="Game Mode" class="contact">
       <div class="container" data-aos="fade-up">
-<a href="../" class="btn-about">back</a>
+<a href="../" class="bi-arrow-left" style="font-weight: bold; font-family: Raleway">back</a>
         <div class="section-title">
-          <h2>Game Mode</h2>
+          <h2 style="font-family: Roboto; font-size: 40px;">Game Mode</h2>
         </div>
 
 
@@ -23,10 +23,12 @@
           .quiz-container{
               border-radius: 20px;
               position:relative;
-              background-color:#ffe1e6;
+              background-color:#fff;
+              border-style: solid;
+              border-color: #ff7a85;
               font-size:18px;
               color:#333;
-              height:180px;
+              height:250px;
               margin-top:20px;
               margin-bottom: 10px;
               text-align:center;
@@ -56,6 +58,7 @@
             line-height: 10px;
               margin-top: 10px;
               margin-right: 5px;
+              font-size: 20px;
               margin-left: 5px;
               margin-bottom: 10px;
             padding: 15px;
@@ -106,16 +109,28 @@
 
              margin-bottom:5px;
           }
+            .bi-arrow-left{
+              border-radius: 15px;
+            background-color: #fff;
+            line-height: 10px;
+              margin-right: 5px;
+              margin-top: 10px;
+              margin-bottom: 20px;
+            padding: 15px;
+            border: #ff7a85;
+              border-style: solid;
+            }
+
         </style>
 
         <div class="quiz-container">
 <div id="quiz">&nbsp;</div>
 </div>
-<div class="quiz-ctrl"><button id="previous" class="quiz-btn"> back</button>
+<div class="quiz-ctrl"><button id="previous" class="quiz-btn"style=" font-family: Raleway; font-weight: bold; font-style: oblique">back</button>
 
-    <button id="next" class="quiz-btn"> next </button>
+    <button id="next" class="quiz-btn" style=" font-family: Raleway; font-weight: bold; font-style: oblique"> next </button>
 
-    <button id="submit" class="quiz-btn"> Show Result </button>
+    <button id="submit" class="quiz-btn" style=" font-family: Raleway;  font-weight: bold; font-style: oblique"> Show Result </button>
 <div id="result">&nbsp;</div>
 </div>
 <p>
@@ -163,8 +178,8 @@ const quizData =[
                           var c = ".png";
                           var tmp = a+b+c;
 
-                             output.push(`<div class="slide"><div class="question"><img width="150" height="90" id = "word_image" src=${tmp}  alt=""></div>
-                                          <div class="answer">${answers.join('&nbsp;&nbsp;&nbsp;&nbsp;')}</div></div>`);
+                             output.push(`<div class="slide"><div class="question"><img width="200vw" height="150vh" id = "word_image" src=${tmp}  alt=""></div>
+                                          <div class="answer" style="font-family: sans-serif; font-size: 20px; font-weight: bold">${answers.join('&nbsp;&nbsp;&nbsp;&nbsp;')}</div></div>`);
                     }
        );
           quizDisplay.innerHTML = output.join('</br>');
@@ -191,7 +206,7 @@ const quizData =[
 
               submitBtn.style.display = 'none';
 
-              resultDisplay.innerHTML = `<h6 style="color:#333;" >${quizData.length} 개 중에서 ${numCorrect} 개 맞추셨습니다.</h6>`
+              resultDisplay.innerHTML = `<a style="color:#333; font-family: sans-serif; font-size: 30px;" >${quizData.length} 개 중에서 ${numCorrect} 개 맞추셨습니다.</a>`
 
     }
 
@@ -243,7 +258,7 @@ function showPreviousSlide(){ showSlide(currentSlide-1); }
  
 
   <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class=""></i></a>
 
   <!-- Vendor JS Files -->
   <script src="/static/vendor/purecounter/purecounter.js"></script>

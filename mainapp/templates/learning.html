@@ -52,25 +52,51 @@
             .show-btn:hover{
             background: #ffd4df;
             }
+
+            .bi-arrow-left{
+              border-radius: 15px;
+            background-color: #fff;
+            line-height: 10px;
+              margin-right: 5px;
+              margin-left: 20px;
+              margin-top: 10px;
+              margin-bottom: 20px;
+            padding: 15px;
+            border: #ff7a85;
+              border-style: solid;
+            }
+
+            .bi-play-circle-fill{
+        border-radius: 30px;
+            background-color: #ffc0cb;
+            background-image: linear-gradient(315deg, #ffe3ee 0%, #ff848f 74%);
+            line-height: 10px;
+              margin-right: 5px;
+              margin-left: 5px;
+              margin-top: 10px;
+              margin-bottom: 20px;
+            padding: 15px;
+            border: none;
+            }
     </style>
 
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="about">
-      <a href="../" class="btn-about">back</a>
+      <a href="../" class="bi-arrow-left" style="font-weight: bold; font-family: Raleway"> back</a>
       </div>
 
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Learning Mode</h2>
+          <h2 style="font-family: Roboto; font-size: 40px;">Learning Mode</h2>
           <p></p>
         </div>
 
         <div class="row">
           <div class="col-lg-4">
             <img id = "camimg" src="http://127.0.0.1:8000/detectme" class="img-fluid" alt="">
-            <button id ="camtoggle" class="show-btn" onclick="toggleImg()">Show words</button>
+            <button id ="camtoggle" class="bi-camera-fill" onclick="toggleImg()"></button>
             <script type="text/javascript">
               let flag = false;
               function toggleImg() {
@@ -120,7 +146,7 @@
                               var str= '';
                               for (var words in data.words){
                                   str += '<p class="fst-italic">'+data.words[words]+'</p>'; // key값 출력시 name
-                                  str += '<button onclick="speak(\''+data.words[words]+'\')">읽기</button>';
+                                  str += '<button onclick="speak(\''+data.words[words]+'\')" class="bi-play-circle-fill">읽기</button>';
                               }
                               $('#update1').html('<ul>'+str+'</ul>')
                           },
