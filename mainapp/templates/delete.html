@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<a href="../../" class="btn-about">index</a>
-    <h1>the word is deleted!</h1>
+{% include "head.html" %}
 
+{% include "header.html" %}
+<body>
+    <main id="main">
+        <style>
+            .bi-house-fill {
+                border-radius: 15px;
+            background-color: #fff;
+            line-height: 10px;
+              margin-right: 5px;
+              margin-left: 20px;
+              margin-top: 10px;
+              margin-bottom: 20px;
+            padding: 15px;
+            border: #ff7a85;
+              border-style: solid;
+            }
+        </style>
+
+    <a href="../../" class="bi-house-fill" style="font-weight: bold; font-size: 20px; font-family: Raleway"> Go home</a>
+    <h1 style="text-align: center; margin-bottom: 30px; font-family: Roboto; font-size: 70px; font-weight: bolder;">the word is deleted!</h1>
+    </main>
 </body>
 </html>
