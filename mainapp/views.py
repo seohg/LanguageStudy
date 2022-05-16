@@ -43,11 +43,13 @@ def ajax(request):
 
 def game(request):
     wordList = models.Word.objects.all()
+    wordList2 = Word.objects.order_by('?')[:5]
     outerStr = "["
     wList = [" ", " ", " "]
     nList = [" ", " ", " "]
     print(len(wordList))
-    for item in wordList:
+    print(len(wordList2))
+    for item in wordList2:
         tmpN = random.randint(0,10)
         wList[0] = wordList[random.randint(0, len(wordList)-1)].word
         wList[1] = wordList[random.randint(0, len(wordList)-1)].word
