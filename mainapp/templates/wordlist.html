@@ -74,8 +74,8 @@
                   <dl>
 
                     <a href="#">
-                      <img id = "word_image" src="/static/images/{{item.word}}.png"  alt="" style="width: 25vw;
-                      height: 30vh; border: solid; border-width: 4px; border-color: #ff7a85; min-width: 100px; min-height: 100px">
+                      <img id = "word_image" width="150" src="/static/images/{{item.word}}.png"  alt=""
+                           style=" border: solid; border-width: 4px; border-color: #ff7a85; min-width: 70px; min-height: 100px">
                        <button id="speak_word" class="bi-play-circle-fill" onclick="speak('{{item.word}}')"></button>
                        <button id="delete_word" class="bi-trash-fill" onclick="location.href='delete/{{item.id}}'"></button>
                     </a>
