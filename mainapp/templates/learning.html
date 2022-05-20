@@ -178,7 +178,7 @@
                               alert('good');
                               var str= '';
                               for (var words in data.words){
-                                  str += '<p class="fst-italic">'+data.words[words]+'</p>'; // key값 출력시 name
+                                  str += '<p class="fst-italic" style="font-size:30px; font-weight: 900;">'+data.words[words]+'</p>'; // key값 출력시 name
                                   str += '<button onclick="speak(\''+data.words[words]+'\')" class="bi-play-circle-fill"></button>';
                               }
                               $('#update1').html('<ul>'+str+'</ul>')
