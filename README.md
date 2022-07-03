@@ -36,6 +36,19 @@ Word list mode
 
 • The user may check the words learned through the corresponding function.
 
+## Implementation
+
+Programming language : Python, html, css
+
+Source codes, examples : https://github.com/madhawav/YOLO3-4-Py.git
+
+APIs, libraries : openCV, numpy, django, bootstrap, gtts
+
+Device : Web cam
+
+IDE : pyCharm
+
+Data : YOLO Weight file, YOLO ctf file, YOLO names file, Names file of different countries
 
 ## User research results
 
