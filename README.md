@@ -66,7 +66,7 @@ object recognition is not possible, but feedback was obtained that it would be u
 
 
 ## Conclusion
-Our system induces people to actively participate in learning Spanish word. Finding the objects that users want to know and taking a picture of the objects help them actively participate and interest in learning words.
+Through this system, people can actively learn the words. Our system induces people to actively participate in study rather than simply read a book and do passive learning. Finding the objects that users want to know and taking a picture of the objects help them actively participate in learning. Also, people can easily learn the words around us. They can know words step by step from objects they are familiar with. Recognizing familiar objects induces users’ interest in learning words. Thus, users will want to learn more things around them.
 
 ## Poster
 
