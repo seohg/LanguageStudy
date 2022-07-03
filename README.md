@@ -26,10 +26,13 @@ Word list mode
 
 ## User research results
 • Interviewee: 4 Student (20~25 ages) 
+
 • Research method : User Test
+
 • User opinion
 “When asked if the application would be useful for learning Spanish words, it said it would be useful for learning the language for the first time because it could learn the words of real things, but it seems not enough to do deep learning “
 • Total evaluation
+
 There are cases where the picture quality is not good and
 object recognition is not possible, but feedback was obtained that it would be useful for students who start studying Spanish because it is accessible and intriguing.
 
@@ -49,4 +52,4 @@ Our system induces people to actively participate in learning Spanish word. Find
 
 ![Team6_Daily word](https://user-images.githubusercontent.com/63279356/171673702-c61ee81b-3178-4871-a146-536819e77f9c.png)
 
-## Conclusion
+
