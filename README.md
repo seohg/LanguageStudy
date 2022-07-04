@@ -40,7 +40,9 @@ Word list mode
 
 Programming language : Python, html, css
 
-Source codes, examples : https://github.com/madhawav/YOLO3-4-Py.git
+Source codes : https://github.com/seohg/LanguageStudy
+
+Source codes, Examples : https://github.com/madhawav/YOLO3-4-Py.git
 
 APIs, libraries : openCV, numpy, django, bootstrap, gtts
 
